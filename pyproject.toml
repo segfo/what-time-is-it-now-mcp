@@ -1,8 +1,8 @@
 [project]
-name = "what-time-is-it-mcp"
+name = "what-time-is-it-now-mcp"
 version = "0.1.0"
-description = "A simple MCP server that provides current time information"
-authors = [{ name = "ultrathink" }]
+description = "A simple MCP server that provides current time information in JST"
+authors = [{ name = "masseater", email = "masseater@example.com" }]
 dependencies = [
     "fastmcp>=2.0.0",
     "mcp>=1.9.2,<2.0.0",
@@ -10,6 +10,11 @@ dependencies = [
 requires-python = ">=3.10"
 readme = "README.md"
 license = { text = "MIT" }
+
+[project.urls]
+"Homepage" = "https://github.com/masseater/what-time-is-it-now"
+"Repository" = "https://github.com/masseater/what-time-is-it-now"
+"Issues" = "https://github.com/masseater/what-time-is-it-now/issues"
 
 keywords = [
     "mcp",
@@ -42,4 +47,4 @@ dev-dependencies = [
 ]
 
 [project.scripts]
-what-time-is-it-mcp = "src.server:main"
+what-time-is-it-now-mcp = "src.server:main"

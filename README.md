@@ -1,22 +1,33 @@
-# what-time-is-it-mcp
+# what-time-is-it-now-mcp
 
 現在時刻を取得するシンプルなModel Context Protocol (MCP) サーバー
 
 ## 概要
 
-このMCPサーバーは、AIアシスタント（Claude Desktopなど）から現在時刻を取得できるようにする簡単な機能を提供します。日本時間（JST）フォーマットで時刻を返します。
+このMCPサーバーは、AIアシスタント（Claude Code、Claude Desktopなど）から現在時刻を取得できるようにする簡単な機能を提供します。日本時間（JST）フォーマットで時刻を返します。
 
 ## 必要条件
 
 - Python 3.10以上
-- uv（Pythonパッケージマネージャー）
 
 ## インストール
 
+### PyPIからインストール（推奨）
+
+```bash
+# pipを使ってインストール
+pip install what-time-is-it-now-mcp
+
+# またはuvを使ってインストール
+uv pip install what-time-is-it-now-mcp
+```
+
+### ソースからインストール
+
 ```bash
 # リポジトリをクローン
-git clone https://github.com/your-username/what-time-is-it-mcp.git
-cd what-time-is-it-mcp
+git clone https://github.com/masseater/what-time-is-it-now.git
+cd what-time-is-it-now
 
 # uvを使って依存関係をインストール
 uv sync
@@ -26,14 +37,24 @@ uv sync
 
 ### Claude Codeでの使用
 
-Claude CodeのCLIから直接MCPサーバーを使用できます：
+#### PyPIからインストールした場合
 
 ```bash
-# MCPサーバーを有効にしてClaude Codeを起動
-claude --mcp-server what-time-is-it-now-mcp:uv:run:python:-m:src.server:/path/to/what-time-is-it-mcp
+# MCPサーバーを追加
+claude mcp add what-time-is-it-now-mcp
 
-# または、--mcp-server-dirオプションを使用（.mcp.jsonファイルがある場合）
-claude --mcp-server-dir /path/to/what-time-is-it-mcp
+# またはコマンドラインから直接使用
+claude --mcp-server "what-time-is-it-now-mcp:command:what-time-is-it-now-mcp"
+```
+
+#### ローカルインストールの場合
+
+```bash
+# プロジェクトディレクトリに移動
+cd /path/to/what-time-is-it-now
+
+# MCPサーバーをローカルから追加
+claude mcp add . --name what-time-is-it-now-mcp
 ```
 
 ### Claude Desktopでの設定（オプション）
@@ -51,7 +72,7 @@ Claude Desktopでも使用したい場合は、設定ファイル（`~/Library/A
         "-m",
         "src.server"
       ],
-      "cwd": "/path/to/what-time-is-it-mcp"
+      "cwd": "/path/to/what-time-is-it-now"
     }
   }
 }
@@ -76,12 +97,13 @@ Claude CodeまたはClaude Desktopで以下のように使用できます：
 ### プロジェクト構造
 
 ```
-what-time-is-it-mcp/
+what-time-is-it-now/
 ├── src/
 │   ├── __init__.py
 │   └── server.py           # MCPサーバーの実装
 ├── pyproject.toml          # プロジェクト設定
 ├── README.md              # このファイル
+├── LICENSE                # MITライセンス
 └── .mcp.json              # MCP設定ファイル
 ```
 
@@ -90,6 +112,19 @@ what-time-is-it-mcp/
 ```bash
 # サーバーを直接起動（stdioモード）
 uv run python -m src.server
+```
+
+### PyPIへの公開
+
+```bash
+# ビルド用ツールをインストール
+pip install --upgrade build twine
+
+# パッケージをビルド
+python -m build
+
+# PyPIにアップロード（TestPyPIでテスト推奨）
+python -m twine upload dist/*
 ```
 
 ## ライセンス
