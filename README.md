@@ -26,8 +26,8 @@ uv pip install what-time-is-it-now-mcp
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/masseater/what-time-is-it-now.git
-cd what-time-is-it-now
+git clone https://github.com/masseater/what-time-is-it-now-mcp.git
+cd what-time-is-it-now-mcp
 
 # uvを使って依存関係をインストール
 uv sync
@@ -51,7 +51,7 @@ claude --mcp-server "what-time-is-it-now-mcp:command:what-time-is-it-now-mcp"
 
 ```bash
 # プロジェクトディレクトリに移動
-cd /path/to/what-time-is-it-now
+cd /path/to/what-time-is-it-now-mcp
 
 # MCPサーバーをローカルから追加
 claude mcp add . --name what-time-is-it-now-mcp
@@ -72,7 +72,7 @@ Claude Desktopでも使用したい場合は、設定ファイル（`~/Library/A
         "-m",
         "src.server"
       ],
-      "cwd": "/path/to/what-time-is-it-now"
+      "cwd": "/path/to/what-time-is-it-now-mcp"
     }
   }
 }
@@ -97,7 +97,7 @@ Claude CodeまたはClaude Desktopで以下のように使用できます：
 ### プロジェクト構造
 
 ```
-what-time-is-it-now/
+what-time-is-it-now-mcp/
 ├── src/
 │   ├── __init__.py
 │   └── server.py           # MCPサーバーの実装

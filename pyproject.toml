@@ -12,9 +12,9 @@ readme = "README.md"
 license = { text = "MIT" }
 
 [project.urls]
-"Homepage" = "https://github.com/masseater/what-time-is-it-now"
-"Repository" = "https://github.com/masseater/what-time-is-it-now"
-"Issues" = "https://github.com/masseater/what-time-is-it-now/issues"
+"Homepage" = "https://github.com/masseater/what-time-is-it-now-mcp"
+"Repository" = "https://github.com/masseater/what-time-is-it-now-mcp"
+"Issues" = "https://github.com/masseater/what-time-is-it-now-mcp/issues"
 
 keywords = [
     "mcp",
