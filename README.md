@@ -10,29 +10,6 @@
 
 - Python 3.10以上
 
-## インストール
-
-### PyPIからインストール（推奨）
-
-```bash
-# pipを使ってインストール
-pip install what-time-is-it-now-mcp
-
-# またはuvを使ってインストール
-uv pip install what-time-is-it-now-mcp
-```
-
-### ソースからインストール
-
-```bash
-# リポジトリをクローン
-git clone https://github.com/masseater/what-time-is-it-now-mcp.git
-cd what-time-is-it-now-mcp
-
-# uvを使って依存関係をインストール
-uv sync
-```
-
 ## 使い方
 
 ### Claude Codeでの使用
