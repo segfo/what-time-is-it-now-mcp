@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "what-time-is-it-now-mcp": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "python",
+        "-m",
+        "src.server"
+      ],
+      "env": {}
+    }
+  }
+}
