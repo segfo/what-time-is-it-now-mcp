@@ -29,6 +29,25 @@ Claude Desktopの場合は、設定ファイル（`~/Library/Application Support
 }
 ```
 
+### LMStudioでの使用
+
+LMStudioの場合は、設定ファイル（`mcp.json`）に以下を追加：
+
+```json
+{
+  "mcpServers": {
+    "what-time-is-it-now-mcp": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/segfo/what-time-is-it-now-mcp_for_lmstudio",
+        "what-time-is-it-now-mcp"
+      ]
+    }
+  }
+}
+```
+
 ### 利用可能なツール
 
 - **get_current_time**: 現在の日本時間（JST）を取得します

@@ -11,11 +11,6 @@ requires-python = ">=3.10"
 readme = "README.md"
 license = { text = "MIT" }
 
-[project.urls]
-"Homepage" = "https://github.com/masseater/what-time-is-it-now-mcp"
-"Repository" = "https://github.com/masseater/what-time-is-it-now-mcp"
-"Issues" = "https://github.com/masseater/what-time-is-it-now-mcp/issues"
-
 keywords = [
     "mcp",
     "mcp server",
